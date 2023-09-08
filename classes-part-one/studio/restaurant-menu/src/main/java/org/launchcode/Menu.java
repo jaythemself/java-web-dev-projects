@@ -1,18 +1,19 @@
 package org.launchcode;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Menu {
-    private Date lastUpdated;
+    private String name;
+    private LocalDate lastUpdated;
     private ArrayList<MenuItem> items;
 
-    public Menu(Date d, ArrayList<MenuItem> i) {
-        this.lastUpdated = d;
-        this.items = i;
+    public Menu(String name, ArrayList<MenuItem> i) {
+        lastUpdated = LocalDate.now();
+        items = i;
     }
 
-    public void setLastUpdated(Date lastUpdated) {
+    public void setLastUpdated(LocalDate lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
@@ -20,11 +21,22 @@ public class Menu {
         this.items = items;
     }
 
-    public Date getLastUpdated() {
+    public LocalDate getLastUpdated() {
         return lastUpdated;
     }
 
     public ArrayList<MenuItem> getItems() {
         return items;
     }
+
+    public void addItem(MenuItem newItem) {
+        this.items.add(newItem);
+        lastUpdated = LocalDate.now();
+    }
+
+    public void removeItem(MenuItem itemToDelete) {
+        this.items.remove(itemToDelete);
+        lastUpdated = LocalDate.now();
+    }
+
 }
