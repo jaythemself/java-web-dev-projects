@@ -17,7 +17,7 @@ public class Main {
         FiveGuys.addItem(NorwegianFries);
 
         System.out.println(FiveGuys.getItems());
-        System.out.println(FrenchFries.toString());
+        System.out.println(FrenchFries);
         FiveGuys.removeItem(NorwegianFries);
         System.out.println(FiveGuys.getItems());
         System.out.println(FiveGuys.getLastUpdated());
