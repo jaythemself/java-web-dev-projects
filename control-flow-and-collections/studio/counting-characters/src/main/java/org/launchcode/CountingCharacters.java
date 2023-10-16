@@ -39,6 +39,7 @@ public class CountingCharacters
                 charCount.put(str.charAt(i),1);
             }
         }
+        input.close();
         System.out.println(charCount);
     }
 }
